@@ -48,6 +48,10 @@ app.get('/', (req, res) => {
   res.send('Troverstar AI Assistant is running.');
 });
 
+catch (error) {
+  console.error('PaxSenix AI error:', error);
+  res.status(500).json({ error: error.message || 'Something went wrong with PaxSenix AI' });
+
 // Start server
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
